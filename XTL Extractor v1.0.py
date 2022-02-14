@@ -26,9 +26,9 @@ def main():
 
 #   Iterating through .zip archive searching for 'evaluation.json' files
 #   Load 'evaluation.json' files and search for Mould criteria
-#   Calls xtlExtract() function if mould criteria is met
+#   Calls xtl_extract() function if mould criteria is met
 def json_parse(f, myzip):
-    if str(f).endswith('evaluation.json'):
+    if f.endswith('evaluation.json'):
         g = myzip.open(f)
         data = json.load(g)
 
