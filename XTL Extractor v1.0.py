@@ -44,7 +44,7 @@ def json_parse(f, myzip):
 def xtl_extract(f, myzip):
     if f.endswith('EQ.xtl'):
         print('Checking and Extracting XTL files...')
-        myzip.extract(f, cwd + '/' + dir_name)
+        myzip.extract(f, '{}/{}'.format(cwd,dir_name))
 
 if __name__ == '__main__':
     mould_criteria = input('Enter mould score greater than or equal to? ')
