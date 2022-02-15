@@ -9,7 +9,7 @@ import os
 
 #   Main function creating directory for extracted files and iterating through .zip files
 def main():
-    if not os.path.exists(cwd + '/' + dir_name):
+    if not os.path.exists('{}/{}'.format(cwd, dir_name)):
         os.mkdir(dir_name)
 
     #Assign files in current working directory to variable for iteration
@@ -20,7 +20,7 @@ def main():
                 for filename in myzip.namelist():
                     json_parse(filename, myzip)
 
-    print('Finished! Files have been extracted to folder named "' + dir_name + '"')
+    print('Finished! Files have been extracted to folder named {}'.format(dir_name))
     print('You may close the program.')
     input()
 
@@ -34,8 +34,7 @@ def json_parse(f, myzip):
 
         for i in data['General']:
             if i == 'Mould':
-                j = data['General'][i]['Score']
-                if j >= int(mould_criteria):
+                if data['General'][i]['Score'] >= int(mould_criteria):
                     for filename in myzip.namelist():
                         xtl_extract(filename, myzip)
         
