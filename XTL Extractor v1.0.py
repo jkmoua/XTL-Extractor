@@ -20,7 +20,7 @@ def main():
                 for filename in myzip.namelist():
                     json_parse(filename, myzip)
 
-    print('Finished! Files have been extracted to folder named {}'.format(dir_name))
+    print('Finished! Files have been extracted to folder named "{}"'.format(dir_name))
     print('You may close the program.')
     input()
 
