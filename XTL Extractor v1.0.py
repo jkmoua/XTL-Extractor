@@ -32,11 +32,9 @@ def json_parse(f, myzip):
         g = myzip.open(f)
         data = json.load(g)
 
-        for i in data['General']:
-            if i == 'Mould':
-                if data['General'][i]['Score'] >= int(mould_criteria):
-                    for filename in myzip.namelist():
-                        xtl_extract(filename, myzip)
+        if data['General']['Mould']['Score'] >= int(mould_criteria):
+            for filename in myzip.namelist():
+                xtl_extract(filename, myzip)
         
         g.close()
 
