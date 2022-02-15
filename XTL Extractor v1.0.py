@@ -46,8 +46,9 @@ def xtl_extract(f, myzip):
 
 if __name__ == '__main__':
     mould_criteria = input('Enter mould score greater than or equal to? ')
-    print('Beginning extraction of XTL files with mould score larger than ' + mould_criteria)
     cwd = os.getcwd()
-    dir_name = 'Mould Greater Than ' + mould_criteria
+    dir_name = 'Mould Greater Than {}'.format(mould_criteria)
+
+    print('Beginning extraction of XTL files with mould score larger than {}'.format(mould_criteria))
     main()
 
